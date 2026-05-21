@@ -18,11 +18,12 @@
 
       <p class="subtitle">Reflect. Track growth. Prevent burnout.</p>
 
-      <form>
+      <form method="POST">
         <label for="reflection"> Today's Reflection </label>
 
         <textarea
           id="reflection"
+          name="reflection"
           rows="8"
           placeholder="Write about your day..."
         >
@@ -30,7 +31,7 @@
 
         <label for="mood"> Mood </label>
 
-        <select id="mood">
+        <select id="mood" name="mood">
           <option>Happy</option>
           <option>Calm</option>
           <option>Motivated</option>
@@ -41,7 +42,7 @@
 
         <label for="productivity"> Productivity Rating </label>
 
-        <select id="productivity">
+        <select id="productivity" name="productivity">
           <option>1</option>
           <option>2</option>
           <option>3</option>
