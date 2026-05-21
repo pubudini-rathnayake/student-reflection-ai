@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Reflection AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Student Reflection AI</h1>
+
+      <p class="subtitle">Reflect. Track growth. Prevent burnout.</p>
+
+      <form>
+        <label for="reflection"> Today's Reflection </label>
+
+        <textarea
+          id="reflection"
+          rows="8"
+          placeholder="Write about your day..."
+        >
+        </textarea>
+
+        <label for="mood"> Mood </label>
+
+        <select id="mood">
+          <option>Happy</option>
+          <option>Calm</option>
+          <option>Motivated</option>
+          <option>Stressed</option>
+          <option>Tired</option>
+          <option>Sad</option>
+        </select>
+
+        <label for="productivity"> Productivity Rating </label>
+
+        <select id="productivity">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <button type="submit">Save Reflection</button>
+      </form>
+    </div>
+  </body>
+</html>

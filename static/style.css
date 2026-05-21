@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.container {
+  width: 60%;
+  max-width: 700px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+/* Subtitle */
+.subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 35px;
+  font-size: 16px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Textarea and Select Inputs */
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+/* Textarea */
+textarea {
+  resize: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+button:hover {
+  background-color: #333;
+}
