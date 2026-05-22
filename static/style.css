@@ -1,8 +1,19 @@
+:root {
+  --bg-color: #f5f7fb;
+  --card-color: white;
+  --text-color: #222;
+  --button-color: #7c5cff;
+  --button-hover: #6848e6;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(to right, #ece9e6, #ffffff);
   margin: 0;
   padding: 0;
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
 }
 
 /* Main Container */
@@ -10,16 +21,20 @@ body {
   width: 60%;
   max-width: 700px;
   margin: 50px auto;
-  background-color: white;
+  background: var(--card-color);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* Title */
 h1 {
   text-align: center;
-  color: #222;
+  color: var(--text-color);
   margin-bottom: 10px;
   font-size: 36px;
 }
@@ -60,7 +75,7 @@ textarea {
 /* Button */
 button {
   width: 100%;
-  background-color: black;
+  background: var(--button-color);
   color: white;
   padding: 14px;
   border: none;
@@ -68,9 +83,43 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 /* Hover Effect */
 button:hover {
+  transform: scale(1.03);
+
+  opacity: 0.9;
+
   background-color: #333;
+}
+
+.card {
+  background: var(--bg-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  transition: all 0.4s ease;
+  .card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.result-box {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  background: var(--card-color);
+
+  text-align: center;
+
+  font-weight: 600;
 }

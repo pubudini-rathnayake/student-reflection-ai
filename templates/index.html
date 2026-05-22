@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,6 +22,17 @@
 
   <body>
     <div class="container">
+      <div class="theme-selector">
+        <label>Select Theme:</label>
+
+        <select id="themeSelect">
+          <option value="default">Default</option>
+          <option value="kdrama">K-Drama</option>
+          <option value="dark">Dark Academia</option>
+          <option value="minimal">Minimal</option>
+        </select>
+      </div>
+
       <h1>Student Reflection AI</h1>
 
       <p class="subtitle">Reflect. Track growth. Prevent burnout.</p>
@@ -51,7 +70,20 @@
         </select>
 
         <button type="submit">Save Reflection</button>
+
+        {% if sentiment %}
+
+        <div class="result-box">
+          <h3>{{ sentiment }}</h3>
+        </div>
+
+        {% endif %}
+
+        <br /><br />
+        <a href="/history">View Reflection History</a>
       </form>
     </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>

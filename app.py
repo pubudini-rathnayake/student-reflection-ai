@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import sqlite3
+from textblob import TextBlob
 
 app = Flask(__name__)
 
@@ -27,10 +28,26 @@ def init_db():
 # Homepage Route
 @app.route("/", methods=["GET", "POST"])
 def home():
+    sentiment = None
 
     if request.method == "POST":
 
         reflection = request.form["reflection"]
+        analysis = TextBlob(reflection)
+
+        sentiment_score = analysis.sentiment.polarity
+        if sentiment_score > 0:
+
+            sentiment = "Positive 😊"
+
+        elif sentiment_score < 0:
+
+            sentiment = "Negative 😔"
+
+        else:
+
+            sentiment = "Neutral 😐"
+
         mood = request.form["mood"]
         productivity = request.form["productivity"]
 
@@ -49,7 +66,23 @@ def home():
 
         print("Reflection saved successfully!")
 
-    return render_template("index.html")
+    return render_template(
+    "index.html",
+    sentiment=sentiment
+)
+
+@app.route("/history")
+def history():
+
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM reflections ORDER BY id DESC")
+    reflections = cursor.fetchall()
+
+    conn.close()
+
+    return render_template("history.html", reflections=reflections)
 
 
 # Run App

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <title>Reflection History</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Your Reflection History</h1>
+
+      {% if reflections|length == 0 %}
+      <p>No reflections yet.</p>
+      {% endif %} {% for r in reflections %}
+
+      <div class="card">
+        <p><strong>Reflection:</strong> {{ r[1] }}</p>
+
+        <p><strong>Mood:</strong> {{ r[2] }}</p>
+
+        <p><strong>Productivity:</strong> {{ r[3] }}/5</p>
+      </div>
+
+      <hr />
+
+      {% endfor %}
+    </div>
+  </body>
+</html>
